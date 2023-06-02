@@ -1,0 +1,36 @@
+@import-normalize;
+
+body {
+  margin: 0;
+  font-family: 'Verdana, sans-serif';
+  font-style: normal;
+  color: #212121;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 375px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

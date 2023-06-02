@@ -1,0 +1,41 @@
+.navLink {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: right;
+  color: #82838f;
+  font-family: 'Verdana';
+  font-style: normal;
+  padding: 10px 0;
+}
+
+.navLink:not(:last-child) {
+  margin-right: 20px;
+}
+
+.navLink:hover:not(.active),
+:focus-visible:not(.active) {
+  color: #d09f9f;
+  background-color: inherit;
+}
+
+.active {
+  color: #ac2828;
+}
+
+@media screen and (min-width: 768px) {
+  .navLink {
+    font-size: 18px;
+    padding: 20px 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navLink {
+    font-size: 20px;
+    padding: 30px 0;
+  }
+}
