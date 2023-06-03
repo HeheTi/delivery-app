@@ -1,5 +1,11 @@
+import ShoppingCart from 'components/ShoppingCart/ShoppingCart';
+
 const ShoppingCartPage = () => {
-  return <div>ShoppingCartPage</div>;
+  return (
+    <>
+      <ShoppingCart />
+    </>
+  );
 };
 
 export default ShoppingCartPage;

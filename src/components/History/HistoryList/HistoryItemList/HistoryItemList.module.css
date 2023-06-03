@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item {
+  flex-basis: calc((100% - 10px) / 2);
+}
+
+.wrapperDescr {
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    flex-basis: calc((100% - 10px * 2) / 3);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .item {
+    flex-basis: calc((100% - 10px * 4) / 5);
+  }
+}

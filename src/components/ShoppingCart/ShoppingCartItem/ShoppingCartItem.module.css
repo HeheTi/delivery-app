@@ -1,0 +1,56 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.wrapperImg {
+  width: 140px;
+  height: 110px;
+}
+
+@media screen and (min-width: 370px) {
+  .wrapperImg {
+    width: 160px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapperImg {
+    width: 200px;
+    height: 130px;
+  }
+}
+
+.wrapperDesr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.price {
+  margin-bottom: 12px;
+}
+
+.amount {
+  width: 90px;
+}

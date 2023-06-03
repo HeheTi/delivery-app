@@ -3,7 +3,7 @@ import s from './Header.module.css';
 
 const Header = () => {
   return (
-    <header>
+    <header className={s.header}>
       <nav>
         <NavLink
           to="/"
@@ -28,6 +28,14 @@ const Header = () => {
           }
         >
           History
+        </NavLink>
+        <NavLink
+          to="/coupons"
+          className={({ isActive }) =>
+            isActive ? `${s.navLink} ${s.active}` : s.navLink
+          }
+        >
+          Coupons
         </NavLink>
       </nav>
     </header>

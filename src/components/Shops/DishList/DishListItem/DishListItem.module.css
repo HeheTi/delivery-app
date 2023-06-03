@@ -1,0 +1,55 @@
+.item {
+  max-width: 250px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 10px;
+  transition: transform 250ms ease-in-out;
+}
+
+.item:hover {
+  transform: scale3d(1.05, 1.05, 1.05);
+}
+
+.wrapperInfo {
+  padding: 15px;
+}
+
+.titleInfo {
+  margin-bottom: 4px;
+}
+
+.priceInfo {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1279px) {
+  .item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .item {
+    flex-basis: calc((100% - 35px * 2) / 3);
+  }
+}
+
+.btn {
+  display: block;
+  padding: 4px 20px;
+  margin-left: auto;
+  margin-right: 0;
+  border-color: transparent;
+  border-radius: 10px;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #ff996d;
+}

@@ -1,8 +1,9 @@
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import OrdersHistoryPage from 'pages/OrdersHistoryPage/OrdersHistoryPage';
-import ShoppingCartPage from 'pages/ShoppingCartPage/ShoppingCartPage';
-import ShopsPage from 'pages/ShopsPage/ShopsPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import SharedLayout from 'components/SharedLayout';
+import CouponsPage from 'pages/CouponsPage';
+import OrdersHistoryPage from 'pages/OrdersHistoryPage';
+import ShoppingCartPage from 'pages/ShoppingCartPage';
+import ShopsPage from 'pages/ShopsPage';
 
 const AllRouts = () => {
   return (
@@ -12,6 +13,7 @@ const AllRouts = () => {
           <Route index element={<ShopsPage />} />
           <Route path="shop-cart" element={<ShoppingCartPage />} />
           <Route path="history" element={<OrdersHistoryPage />} />
+          <Route path="coupons" element={<CouponsPage />} />
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Route>
       </Routes>
