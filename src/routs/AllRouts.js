@@ -14,8 +14,8 @@ const AllRouts = () => {
           <Route path="shop-cart" element={<ShoppingCartPage />} />
           <Route path="history" element={<OrdersHistoryPage />} />
           <Route path="coupons" element={<CouponsPage />} />
-          <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace={true} />} />
       </Routes>
     </>
   );

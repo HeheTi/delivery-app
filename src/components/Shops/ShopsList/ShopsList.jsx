@@ -1,16 +1,39 @@
 import PropTypes from 'prop-types';
+import { useContext, useEffect, useState } from 'react';
+import { getAllShops } from 'services/api/baseApi';
+import MyContext from 'services/MyContext';
 import s from './ShopsList.module.css';
+import { save } from 'services/localStorage';
+import { SELECTED_SHOP_ID_LS } from 'services/constants';
 
-const shops = [
-  { id: 1, title: 'Mc Donny' },
-  { id: 2, title: 'CFK' },
-  { id: 3, title: 'etc.' },
-  { id: 4, title: 'etc.' },
-  { id: 5, title: 'etc.' },
-  { id: 6, title: 'etc.' },
-];
+const ShopsList = ({ setShop }) => {
+  const [shops, setShops] = useState([]);
+  const [isActiveShopId, setIsActiveShopId] = useState('');
+  const [isSelect, setIsSelect] = useState(false);
+  const { setSelectedDishes } = useContext(MyContext);
 
-const ShopsList = props => {
+  useEffect(() => {
+    getAllShops().then(data => {
+      if (!data) return;
+      setShops(data);
+    });
+  }, []);
+
+  const handleShopClick = id => {
+    if (isSelect) return;
+    setShop(id);
+    setIsActiveShopId(id);
+    setIsSelect(true);
+  };
+
+  const handleIsActiveReset = () => {
+    setIsSelect(false);
+    setShop('');
+    setIsActiveShopId('');
+    setSelectedDishes([]);
+    save(SELECTED_SHOP_ID_LS, '');
+  };
+
   return (
     <div className={s.wrapperShopsList}>
       <h2 className={s.listTitle}>Shops:</h2>
@@ -19,13 +42,22 @@ const ShopsList = props => {
       )}
       {shops.length > 0 && (
         <ul className={s.list}>
-          {shops.map(({ id, title }) => (
-            <li key={id} className={s.itemList}>
-              {title}
+          {shops.map(({ _id, shop }) => (
+            <li
+              key={_id}
+              className={s.itemList}
+              onClick={() => handleShopClick(_id)}
+              disabled={_id !== isActiveShopId && isActiveShopId !== ''}
+            >
+              {shop}
             </li>
           ))}
         </ul>
       )}
+
+      <button type="button" onClick={handleIsActiveReset}>
+        Reset
+      </button>
     </div>
   );
 };
